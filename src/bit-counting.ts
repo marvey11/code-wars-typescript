@@ -9,3 +9,10 @@ export const countBits = (n: number): number => {
   // therefore this...
   return [...n.toString(2)].filter((x) => x === "1").length;
 };
+
+/**
+ * Recursive version.
+ */
+export const countBits2 = (n: number): number => {
+  return (n % 2) + (n > 1 ? countBits2(Math.floor(n / 2)) : 0);
+};
